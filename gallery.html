@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WINDY AUGUSTINE MAHESWARI</title>
+  <style>
+    /* Reset default margin & padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+     body {
+      flex: 1;
+      font-family: 'Poppins', sans-serif;
+      color: rgb(243, 240, 240);
+       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: cover;
+      
+
+     }
+
+    body {
+     background-image: url(backgroundkiss.jpg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+   justify-content: center;
+    align-items: center;
+}
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.411);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      position:fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    nav h1 {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+  
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f270dc;
+    }
+
+     .wrap {
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      object-fit: cover;
+      animation: zoomin 1s cubic-bezier(1, 0.01, 0, 0.99);
+    }
+
+    @keyframes zoomin{
+    0% {
+        transform: scale(0.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+    }
+
+
+    /* Grid utama */
+    .photo-grid {
+      display: grid;
+      padding: 100px;
+      grid-template-columns: repeat(2, 1fr);      /* dua kolom */
+      grid-template-rows: repeat(2, 250px) 250px; /* dua baris 250px + baris bawah 250px */
+      gap: 10px;
+      grid-template-areas:
+        "img1 img2"
+        "img3 img4"
+        "img5 img5"; /* img5 span dua kolom */
+    }
+
+    /* Penempatan area */
+    .item1 { grid-area: img1; }
+    .item2 { grid-area: img2; }
+    .item3 { grid-area: img3; }
+    .item4 { grid-area: img4; }
+    .item5 { grid-area: img5; }
+
+    /* Styling masing-masing foto agar ukurannya sama dan rapi */
+    .photo-card {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(15,20,30,0.08);
+      border: 1px solid rgba(0,0,0,0.04);
+      
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* menjaga crop seimbang */
+      display: block;
+      transition: transform .45s ease;
+    }
+
+    /* Sedikit efek hover */
+    .photo-card:hover img {
+      transform: scale(1.50);
+    }
+
+    /* Responsif: di layar sempit, jadikan 1 kolom */
+    @media (max-width:550px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 220px);
+        grid-template-areas:
+          "img1"
+          "img2"
+          "img3"
+          "img4"
+          "img5";
+      }
+    }
+
+  
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>WINDY AUGUSTINE</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Konten Utama -->
+ <div class="wrap">
+
+    <div class="photo-grid">
+      <div class="photo-card item1">
+        <img src="modeling1.jpg" alt="Foto 1">
+      </div>
+
+      <div class="photo-card item2">
+        <img src="modeling.jpg" alt="Foto 2">
+      </div>
+
+      <div class="photo-card item3">
+        <img src="modeling3.jpg" alt="Foto 3">
+      </div>
+
+      <div class="photo-card item4">
+        <img src="modeling4.jpg" alt="Foto 4">
+      </div>
+
+      <div class="photo-card item5">
+        <img src="modeling2.jpeg" alt="Foto 5 (lebar)">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="foter1">
+   
+  </footer>
+
+</body>
+</html>
